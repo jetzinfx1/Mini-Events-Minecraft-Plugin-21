@@ -1,0 +1,24 @@
+name: BoxPvpEvents
+version: '1.0.0'
+main: com.boxpvp.events.BoxPvpEvents
+api-version: '26.2'
+author: You
+description: Random mini-events plugin for BoxPvP servers.
+
+commands:
+  boxevents:
+    aliases: [bpe]
+    description: Admin management for BoxPvP events.
+    usage: /<command> help
+    permission: boxpvpevents.admin
+  events:
+    description: Join, leave, list or check the next BoxPvP event.
+    usage: /<command> help
+
+permissions:
+  boxpvpevents.admin:
+    description: Access to /boxevents - the GUI and all admin actions (locations, wands, start/stop, rewards, hologram, reload)
+    default: op
+  boxpvpevents.join:
+    description: Allows joining events
+    default: true

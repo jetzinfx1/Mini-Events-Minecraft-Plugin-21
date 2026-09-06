@@ -1,0 +1,92 @@
+# =========================================
+#   BoxPvpEvents Configuration
+# =========================================
+
+# How often (in minutes) a random event is triggered.
+event-interval-minutes: 60
+
+# Windows of time (24h, HH:mm) during which NO events will fire - e.g. night.
+# Add as many windows as you like. Leave the list empty for no blackout at all.
+blackout-windows:
+  - start: "00:00"
+    end: "08:00"
+
+# How long (seconds) players get to prepare/join before the event starts.
+prepare-seconds: 180
+
+# The countdown warnings broadcast in chat, in seconds remaining before start.
+countdown-warnings: [180, 150, 120, 90, 60, 30, 15, 10, 5, 4, 3, 2, 1]
+
+# Does a player need a completely empty inventory (including armor) to join?
+require-empty-inventory: true
+
+# Where players are teleported back to once an event ends.
+# If use-world-spawn is true (default), this always uses the world's actual
+# spawn point - which is exactly what most /setspawn or /sethub plugins
+# (e.g. Essentials) update, so it works automatically with your existing
+# spawn setup with zero extra configuration.
+# Set use-world-spawn to false, or just click "Set Return Spawn" in the GUI
+# (which does this for you), to use a custom point instead.
+return-spawn:
+  use-world-spawn: true
+  world: world
+  x: 0.5
+  y: 65.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+# KOTH: how many uninterrupted seconds a lone player must hold the capture
+# zone (set with the region wand) to win.
+koth:
+  capture-seconds: 60
+
+# The boss-bar countdown to the next event, shown to every online player.
+next-event-timer:
+  enabled: true
+
+# Sounds played for various moments - use any vanilla Sound enum name
+# (https://jd.papermc.io/paper/1.20/org/bukkit/Sound.html). Leave any value
+# blank/invalid to fall back to the plugin's default for that moment.
+sounds:
+  event-announce: BLOCK_NOTE_BLOCK_PLING
+  spin-flash: UI_BUTTON_CLICK
+  spin-land: ENTITY_PLAYER_LEVELUP
+  countdown-tick: BLOCK_NOTE_BLOCK_PLING
+  event-start: ENTITY_ENDER_DRAGON_GROWL
+  winner: ENTITY_PLAYER_LEVELUP
+  jackpot-spin: UI_BUTTON_CLICK
+  checkpoint-save: BLOCK_NOTE_BLOCK_CHIME
+  mud-trap: BLOCK_MUD_BREAK
+  wand-select: BLOCK_NOTE_BLOCK_HAT
+  koth-tick: BLOCK_NOTE_BLOCK_HAT
+  ammo-pickup: ITEM_ARMOR_EQUIP_IRON
+  ammo-hit: ENTITY_PLAYER_HURT
+  ammo-miss: BLOCK_ANVIL_LAND
+
+# Optional floating hologram (a plain armor stand, no extra plugin needed)
+# showing the same countdown. Set with /boxevents sethologram.
+hologram:
+  enabled: false
+  location:
+    world: world
+    x: 0.5
+    y: 65.0
+    z: 0.5
+
+# Messages - colour codes with &, {event} and {player} placeholders supported where relevant.
+messages:
+  prefix: ""
+  countdown: "&8✦ &6&l{event} &7starts in &f&l{time}&7!"
+  join-prompt: "&8✦ &6&l{event} &7- you have &f&l{time} &7to prepare!"
+  join-button: "&a&l» CLICK TO JOIN «"
+  joined: "&aYou joined {event}! Get ready. If you'd like to back out, just type &f/events leave&a anytime."
+  already-joined: "&cYou already joined this event."
+  no-active-event: "&cThere is no event to join right now."
+  inventory-not-empty: "&cYour inventory (and armor) must be completely empty to join an event."
+  event-started: "&6{event} &fhas started! Good luck!"
+  event-cancelled-empty: "&cNot enough players joined - {event} was cancelled."
+  winner: "&6&l{player} &fwon &6{event}&f! Check your inventory for your reward!"
+  jackpot-join-hint: "&eType &f\"jackpot\" &ein chat during the next &f{time} &eto enter!"
+  jackpot-joined: "&aYou're in the jackpot! Good luck!"
+  disqualified: "&c{player} was disqualified from {event}!"

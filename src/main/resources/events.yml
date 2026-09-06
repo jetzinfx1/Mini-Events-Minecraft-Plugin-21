@@ -1,0 +1,34 @@
+# =========================================
+#  Event definitions
+#  - Managed by the plugin via /boxevents gui - hand-editing works too.
+#  - "type" controls which built-in mechanic is used:
+#      PARKOUR, KOTH, DODGEBOLT, STRAFE, PVP_TOURNAMENT, DODGEBALL,
+#      VOLLEY_CHARGE, JACKPOT, CUSTOM
+#  - Everything else (locations, temp items, rewards, colour) is left blank
+#    here on purpose - configure it all from /boxevents gui.
+# =========================================
+events:
+  parkour:
+    display-name: "&bParkour Race"
+    type: PARKOUR
+  koth:
+    display-name: "&cKing of the Hill"
+    type: KOTH
+  dodgebolt:
+    display-name: "&eDodgebolt"
+    type: DODGEBOLT
+  strafe:
+    display-name: "&aStrafe Battle"
+    type: STRAFE
+  pvp_tournament:
+    display-name: "&4PvP Tournament"
+    type: PVP_TOURNAMENT
+  dodgeball:
+    display-name: "&6DodgeBall"
+    type: DODGEBALL
+  volley_charge:
+    display-name: "&bVolley Charge"
+    type: VOLLEY_CHARGE
+  jackpot:
+    display-name: "&6Jackpot"
+    type: JACKPOT
